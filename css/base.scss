@@ -1,0 +1,120 @@
+@charset 'utf-8';
+
+$f_color01:#333; //메인 글자색 변수
+$f_color02:#fff;
+$f_size01:12px; //일반 본문 글자 크기
+$f_size02:16px; //내비게이션 글자 크기
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap');
+
+/* 모든 페이지에 공통으로 적용되는 서식 */
+body{
+  background:#fff;
+  font-family: 'Noto Sans KR', '맑은 고딕', sans-serif;
+  font-size:$f_size01;
+  color:$f_color01;
+}
+
+a{
+  text-decoration:none;
+  color:$f_color01;
+  font-size:$f_size01;
+}
+/* 헤더 */
+header{
+  width:100%;height:70px;
+  position:fixed;top:0px;
+  z-index:1000;
+}
+header > h1{
+  padding:24px 0px 0px 2%;
+}
+header i.fas{
+  position:absolute;
+  top:24px;
+  font-size:1.6rem;
+  color:$f_color02;
+  cursor:pointer;
+}
+header i.fa-user{right:4%;}
+header i.fa-bell{right:2%;}
+
+
+/* 메뉴, 로그인, 알람 글자색 변경 */
+.on{
+  color:#000 !important;
+}
+
+/* 헤더 배경 */
+.h_on{
+  background:rgba(255,255,255,0.9) !important;
+}
+
+/* 내비게이션 */
+nav{
+  margin:-24px auto 0px auto;
+  width:600px;
+}
+.gnb{
+  display:flex;
+  justify-content:space-around;
+}
+.gnb > li > a{
+  font-size:1.2rem;
+  color:$f_color02;
+}
+
+/* 원형 내비게이션 */
+#m_nav{
+  position:fixed;
+  right:30px;top:50%;
+  transform:translateY(-50%);
+  z-index:101;
+  width:200px;height:160px;
+}
+#m_nav > ul{
+  position:relative;
+}
+#m_nav > ul > li{
+  width:30px;height:30px;
+  border-radius:40px;
+  position:absolute;right:0px;
+  line-height:30px;
+  background:rgba(0,0,0,.4);
+  transition:0.5s;
+  overflow:hidden;
+}
+#m_nav > ul > li:hover{width:200px;}
+#m_nav > ul > li:first-child{top:0px;}
+#m_nav > ul > li:nth-child(2){top:50px;}
+#m_nav > ul > li:nth-child(3){top:100px;}
+#m_nav > ul > li:nth-child(4){top:150px;}
+#m_nav > ul > li:last-child{top:200px;}
+
+#m_nav > ul > li > span{
+  display:inline-block;
+  width:30px;height:30px;
+  border-radius:50%;
+  background-color: rgba(0, 179, 255, 0.6);
+  color: $f_color02;
+  text-align: center;
+  font-weight: bold;
+}
+#m_nav > ul > li:hover > span{
+  background: rgb(0, 179, 255);
+}
+#m_nav > ul > li > a{
+  color:$f_color02;
+  display:inline-block;
+  width:160px;
+  text-align:center;
+  position:absolute;top:0px;
+}
+// #m_nav > ul > li > a:hover{}
+
+/* 푸터 */
+footer{
+  height:177px;
+  background-color:#1A191A;
+}
